@@ -1,3 +1,3 @@
-.wp-block-table:is(.is-style-szgk-table-gold-rounded,.is-style-szgk-table-gold-rounded-row-heading,.is-style-szgk-table-gold-rounded-horizontal,.is-style-szgk-table-gold-rounded-row-heading-horizontal)>table>tbody:not(:has(~:is(tbody,tfoot)>tr))>tr:nth-last-child(3)>th[rowspan="3"],.wp-block-table:is(.is-style-szgk-table-gold-rounded,.is-style-szgk-table-gold-rounded-row-heading,.is-style-szgk-table-gold-rounded-horizontal,.is-style-szgk-table-gold-rounded-row-heading-horizontal)>table>tbody:not(:has(~:is(tbody,tfoot)>tr))>tr:nth-last-child(2)>th[rowspan="2"] {
-    border-bottom: 0
-}
+----- ----- ----- ----- ----- ----- 
+修正前の原稿
+----- ----- ----- ----- ----- ----- 
