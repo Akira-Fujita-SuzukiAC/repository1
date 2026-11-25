@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>リンクボタン一覧</title>
+<!-- Font Awesome 7 無料版 CDN (※7系がない環境でも動くよう最新CDNを読み込んでいます) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<!-- ※実際にFont Awesome 7のキットやCSSをお持ちの場合は上記のlinkタグを差し替えてください -->
+
+<style>
+  /* リセット・基本設定 */
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+  }
+
+  /* ボタンを並べるコンテナ（PC：3列） */
+  .link-button-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* ボタン同士の縦横の間隔 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* ボタンのボックス（PC：3個並び） */
+  .link-button-item {
+    /* 100%からgap(20px × 2箇所 = 40px)を引いて3等分 */
+    width: calc((100% - 40px) / 3);
+    display: flex; /* 同じ行のボタンの高さを揃えるため */
+  }
+
+  /* ボタン本体（aタグ）のデザイン */
+  .link-button {
+    display: flex;
+    align-items: center; /* アイコンとテキストを上下中央揃え */
+    width: 100%;
+    padding: 18px 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #c7ac61;
+    border-radius: 12px;
+    
+    /* 文字色・装飾（※白背景で見えるように枠線と同じ#c7ac61にしています） */
+    color: #c7ac61; 
+    /* ご指定通りの#fffde7にする場合は上の行を消して下のコメントを解除してください */
+    /* color: #fffde7; */
+    
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 1.5;
+    transition: background-color 0.25s ease;
+  }
+
+  /* ホバー時のスタイル */
+  .link-button:hover {
+    background-color: #fffde7;
+    /* ここでの text-decoration: underline; を削除 */
+  }
+
+  /* マウスオーバー時、テキスト部分にのみ下線をつける */
+  .link-button:hover .link-button-text {
+    text-decoration: underline;
+  }
+
+
+  /* 左側の矢印アイコン */
+  .link-button i {
+    flex-shrink: 0; /* テキストが長くてもアイコンが縮まないようにする */
+    margin-right: 12px; /* アイコンとテキストの間の余白（＝2行目以降の左余白になる） */
+    font-size: 1.2em;
+    /* アイコンの色は親要素(.link-button)のcolorを自動継承します */
+  }
+
+  /* テキスト部分のラッパー */
+  .link-button-text {
+    display: block;
+    /* flexアイテムとして配置されているため、改行してもアイコンの下には回り込みません */
+  }
+
+  /* 改行制御用のクラス（単語やフレーズの途中で改行させたくない塊に使用） */
+  .nb {
+    display: inline-block;
+  }
+
+  /* =========================================
+     レスポンシブ設定
+  ========================================= */
+
+  /* タブレット（画面幅 1024px以下：2個並び） */
+  @media screen and (max-width: 1024px) {
+    .link-button-item {
+      /* 100%からgap(20px × 1箇所)を引いて2等分 */
+      width: calc((100% - 20px) / 2);
+    }
+  }
+
+  /* スマホ（画面幅 640px以下：1個並び） */
+  @media screen and (max-width: 640px) {
+    .link-button-item {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <ul class="link-button-list">
+    <li class="link-button-item">
+      <a href="#" class="link-button">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+        <span class="link-button-text">中央歯科衛生士調理製菓専門学校<wbr> <span class="nb">調理製菓総合学科</span></span>
+      </a>
+    </li>
+    <li class="link-button-item">
+      <a href="#" class="link-button">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+        <span class="link-button-text">中央歯科衛生士調理製菓専門学校<wbr> <span class="nb">歯科衛生学科</span></span>
+      </a>
+    </li>
+    <li class="link-button-item">
+      <a href="#" class="link-button">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+        <span class="link-button-text">中央調理製菓専門学校<wbr><span class="nb">静岡校</span></span>
+      </a>
+    </li>
+    <li class="link-button-item">
+      <a href="#" class="link-button">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+        <span class="link-button-text">専門学校<wbr><span class="nb">中央メカニック自動車大学校</span></span>
+      </a>
+    </li>
+    <li class="link-button-item">
+      <a href="#" class="link-button">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+        <span class="link-button-text">専門学校<wbr><span class="nb">中央医療健康大学校</span></span>
+      </a>
+    </li>
+    <li class="link-button-item">
+      <a href="#" class="link-button">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+        <span class="link-button-text">中央動物総合専門学校</span>
+      </a>
+    </li>
+    <li class="link-button-item">
+      <a href="#" class="link-button">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+        <span class="link-button-text">しらゆり幼稚園 <wbr><span class="nb">（幼保連携型認定こども園）</span></span>
+      </a>
+    </li>
+  </ul>
+
+</body>
+</html>
